@@ -1,6 +1,6 @@
 import wbdata
 import pandas as pd
-from datetime import datetime
+
 
 def fetch_gdp_data(countries, start_year=2002, end_year=2022, output_file='gdp_data.csv'):
     """
@@ -29,7 +29,7 @@ def fetch_gdp_data(countries, start_year=2002, end_year=2022, output_file='gdp_d
     # Filter data between the specified start and end years
     data = data[(data['date'].dt.year >= start_year) & (data['date'].dt.year <= end_year)]
 
-    #change data into trillion
+    # change data into trillion
     data['GDP'] = data['GDP'] / 1e12
 
     # Sort the data by country and date
@@ -41,10 +41,11 @@ def fetch_gdp_data(countries, start_year=2002, end_year=2022, output_file='gdp_d
     # Return the DataFrame for further use if needed
     return data
 
+
 # Example usage of the function
 countries = ['GB', 'JP', 'CN', 'DE', 'CH']  # UK, Japan, China, Germany, Switzerland
 gdp_data = fetch_gdp_data(countries, start_year=2002, end_year=2022, output_file='gdp_data.csv')
 
+
 # Display the first few rows of the fetched data
 print(gdp_data.head())
-

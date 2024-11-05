@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def plot_gdp(csv_file, countries, output_file='gdp_plot.png'):
 
     # Load the CSV file into a DataFrame
@@ -19,10 +20,9 @@ def plot_gdp(csv_file, countries, output_file='gdp_plot.png'):
 
     plt.xlabel('Year')
     plt.ylabel('GDP (Current US T$)')
-    plt.ylim(0,20)
+    plt.ylim(0, 20)
     plt.title('GDP Over Time (2002-2022)')
     plt.legend(loc='upper left')
-
 
     # Save the plot to a file
     plt.savefig(output_file)
@@ -30,7 +30,9 @@ def plot_gdp(csv_file, countries, output_file='gdp_plot.png'):
     # Optionally, show the plot
     plt.show()
 
-#plot the gdp 
+
+# plot the gdp
 countries1 = ['China', 'Germany', 'Japan', 'Switzerland', 'United Kingdom']
+
 
 plot_gdp("gdp_data.csv", countries1, output_file='gdp_plot.png')
